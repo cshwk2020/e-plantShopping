@@ -93,7 +93,7 @@ const handlePlantsClick = (e) => {
         {!showCart? (
         <div className="product-grid">
 
-            { JSON.stringify(addedToCart) }
+            
 
         {plantsArray.map((category, index) => (
             <div key={index}>
