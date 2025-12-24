@@ -26,19 +26,23 @@ const CartItem = ({ onContinueShopping }) => {
 
 
 
-  const handleIncrement = (item) => {
-    const updated_item = {...item, quantity: (item.quantity+1)}
+  const handleUpdateQty = (item, new_qty) => {
+    const updated_item = {...item, quantity: new_qty}
     dispatch(updateQuantity(updated_item));
+  };
+
+
+  const handleIncrement = (item) => {
+    handleUpdateQty(item, (item.quantity+1));
   };
 
   const handleDecrement = (item) => {
      
     if (item.quantity > 1) {
-      const updated_item = {...item, quantity: (item.quantity-1)}
-      dispatch(updateQuantity(updated_item));
+      handleUpdateQty(item, (item.quantity-1));
     }
-     
   };
+  
    
   const handleRemove = (item) => {
     dispatch(removeItem(item.name));
