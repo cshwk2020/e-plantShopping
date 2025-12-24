@@ -6,6 +6,29 @@ import CartItem from './CartItem';
 import plantsArray from './PlantArray';
 import { addItem } from './CartSlice';
 
+const styleObj={
+    backgroundColor: '#4CAF50',
+    color: '#fff!important',
+    padding: '15px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignIems: 'center',
+    fontSize: '20px',
+   };
+
+const styleObjUl={
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '1100px',
+   };
+   
+const styleA={
+    color: 'white',
+    fontSize: '30px',
+    textDecoration: 'none',
+   };
+
 function ProductList() {
     const dispatch = useDispatch();
 
@@ -23,41 +46,21 @@ function ProductList() {
       };
 
      
-   const styleObj={
-    backgroundColor: '#4CAF50',
-    color: '#fff!important',
-    padding: '15px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignIems: 'center',
-    fontSize: '20px',
-   }
-   const styleObjUl={
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    width: '1100px',
-   }
-   const styleA={
-    color: 'white',
-    fontSize: '30px',
-    textDecoration: 'none',
-   }
+   
    const handleCartClick = (e) => {
-    e.preventDefault();
-    setShowCart(true); // Set showCart to true when cart icon is clicked
-};
-const handlePlantsClick = (e) => {
-    e.preventDefault();
-    setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
-    setShowCart(false); // Hide the cart when navigating to About Us
-};
+        e.preventDefault();
+        setShowCart(true); // Set showCart to true when cart icon is clicked
+    };
+    const handlePlantsClick = (e) => {
+        e.preventDefault();
+        setShowPlants(true); // Set showAboutUs to true when "About Us" link is clicked
+        setShowCart(false); // Hide the cart when navigating to About Us
+    };
 
    const handleContinueShopping = (e) => {
     if (e) {
         e.preventDefault();
     }
-    
     setShowCart(false);
   };
 
