@@ -98,7 +98,7 @@ function ProductList() {
 
             
 
-        {plantsArray.map((category, index) => (
+        {plantsArray.filter(category => category.plants.length >= 6).map((category, index) => (
             <div key={index}>
                 <h1><div>{category.category}</div></h1>
                 <div className="product-list">
